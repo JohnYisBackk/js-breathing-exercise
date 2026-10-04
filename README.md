@@ -16,7 +16,7 @@ Customize your breathing pattern, follow an animated breathing circle, track you
 
 <br>
 
-[🌐 Live Demo]()
+[🌐 Live Demo](https://johnyisbackk.github.io/js-breathing-exercise/)
 
 </div>
 

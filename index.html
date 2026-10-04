@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
+
+    <title>Breathing Exercise PRO</title>
+  </head>
+
+  <body>
+    <!-- ======================================================
+     HEADER
+====================================================== -->
+
+    <header class="header">
+      <div class="header-wrapper">
+        <a href="#" class="logo">
+          <i class="bi bi-flower1"></i>
+
+          <div class="logo-content">
+            <h1>Breathing Exercise <span>PRO</span></h1>
+            <p>Breathe Better. A Calmer You.</p>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="#" class="nav-link active" data-section="home">Home</a>
+          <a href="#" class="nav-link" data-section="sessions">Sessions</a>
+          <a href="#" class="nav-link" data-section="progress">Progress</a>
+          <a href="#" class="nav-link" data-section="about">About</a>
+        </nav>
+
+        <button
+          class="theme-toggle"
+          id="themeBtn"
+          type="button"
+          aria-label="Theme toggle"
+        >
+          <i class="bi bi-sun-fill"></i>
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ======================================================
+     MAIN
+    ====================================================== -->
+
+    <main>
+      <!-- ====================================================
+       GUIDED BREATHING SECTION
+    ===================================================== -->
+
+      <section class="breathing-main-section">
+        <div class="main-wrapper">
+          <div class="main-heading">
+            <h3>Guided Breathing</h3>
+            <p>Follow the circle and keep a steady pace.</p>
+          </div>
+
+          <div class="main-circle">
+            <div class="circle-outer-ring">
+              <div class="circle-middle-ring">
+                <div class="circle-inner">
+                  <span class="breathing-phase" id="breathingPhase"
+                    >INHALE</span
+                  >
+
+                  <strong class="breathing-seconds" id="breathingSeconds"
+                    >4</strong
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="breathing-message" id="breathingMessage">
+            Breathe in Slowly
+          </p>
+
+          <div class="main-actions">
+            <button class="start-button" id="startBtn" type="button">
+              <i class="bi bi-play-fill"></i>
+              Start Session
+            </button>
+
+            <button class="pause-button" id="pauseBtn" type="button">
+              <i class="bi bi-pause-fill"></i>
+              Pause
+            </button>
+
+            <button class="reset-button" id="resetBtn" type="button">
+              <i class="bi bi-arrow-clockwise"></i>
+              Reset
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+       BREATHING PATTERN SECTION
+    ===================================================== -->
+
+      <section class="pattern-section">
+        <div class="pattern-wrapper">
+          <div class="pattern-heading">
+            <i class="bi bi-lungs-fill"></i>
+
+            <div class="pattern-content">
+              <h3>Breathing Pattern</h3>
+              <p>Adjust the timing to match your needs.</p>
+            </div>
+          </div>
+
+          <div class="pattern-boxes">
+            <!-- INHALE -->
+            <div class="pattern-box">
+              <div class="pattern-box-left">
+                <div class="dot blue"></div>
+                <p>Inhale</p>
+              </div>
+
+              <div class="pattern-box-right">
+                <div class="input-box">
+                  <input
+                    type="number"
+                    id="inhaleInput"
+                    value="4"
+                    min="1"
+                    max="10"
+                    step="1"
+                  />
+
+                  <div class="input-arrows">
+                    <button class="input-arrow increase" type="button">
+                      <i class="bi bi-chevron-up"></i>
+                    </button>
+
+                    <button class="input-arrow decrease" type="button">
+                      <i class="bi bi-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <span>seconds</span>
+              </div>
+            </div>
+
+            <!-- HOLD -->
+            <div class="pattern-box">
+              <div class="pattern-box-left">
+                <div class="dot purple"></div>
+                <p>Hold</p>
+              </div>
+
+              <div class="pattern-box-right">
+                <div class="input-box">
+                  <input
+                    type="number"
+                    id="holdInput"
+                    value="4"
+                    min="0"
+                    max="10"
+                    step="1"
+                  />
+
+                  <div class="input-arrows">
+                    <button class="input-arrow increase" type="button">
+                      <i class="bi bi-chevron-up"></i>
+                    </button>
+
+                    <button class="input-arrow decrease" type="button">
+                      <i class="bi bi-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <span>seconds</span>
+              </div>
+            </div>
+
+            <!-- EXHALE -->
+            <div class="pattern-box">
+              <div class="pattern-box-left">
+                <div class="dot green"></div>
+                <p>Exhale</p>
+              </div>
+
+              <div class="pattern-box-right">
+                <div class="input-box">
+                  <input
+                    type="number"
+                    id="exhaleInput"
+                    value="6"
+                    min="1"
+                    max="10"
+                    step="1"
+                  />
+
+                  <div class="input-arrows">
+                    <button class="input-arrow increase" type="button">
+                      <i class="bi bi-chevron-up"></i>
+                    </button>
+
+                    <button class="input-arrow decrease" type="button">
+                      <i class="bi bi-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <span>seconds</span>
+              </div>
+            </div>
+
+            <!-- HOLD AFTER EXHALE -->
+            <div class="pattern-box">
+              <div class="pattern-box-left">
+                <div class="dot purple"></div>
+                <p>Hold</p>
+              </div>
+
+              <div class="pattern-box-right">
+                <div class="input-box">
+                  <input
+                    type="number"
+                    id="holdAfterExhaleInput"
+                    value="2"
+                    min="0"
+                    max="10"
+                    step="1"
+                  />
+
+                  <div class="input-arrows">
+                    <button class="input-arrow increase" type="button">
+                      <i class="bi bi-chevron-up"></i>
+                    </button>
+
+                    <button class="input-arrow decrease" type="button">
+                      <i class="bi bi-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <span>seconds</span>
+              </div>
+            </div>
+
+            <div class="pattern-box">
+              <div class="pattern-box-left">
+                <div class="dot orange"></div>
+                <p>Cycles</p>
+              </div>
+
+              <div class="pattern-box-right">
+                <div class="input-box">
+                  <input
+                    type="number"
+                    id="cyclesInput"
+                    value="5"
+                    min="1"
+                    max="10"
+                    step="1"
+                  />
+
+                  <div class="input-arrows">
+                    <button class="input-arrow increase" type="button">
+                      <i class="bi bi-chevron-up"></i>
+                    </button>
+
+                    <button class="input-arrow decrease" type="button">
+                      <i class="bi bi-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <span>cycles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+       SESSION STATS SECTION
+    ===================================================== -->
+
+      <section class="session-stats-section">
+        <div class="session-wrapper">
+          <div class="session-heading">
+            <i class="bi bi-bar-chart-fill"></i>
+
+            <div class="session-content">
+              <h3>Session Stats</h3>
+              <p>Track your progress in real time.</p>
+            </div>
+          </div>
+
+          <div class="stat-boxes">
+            <div class="stat-box">
+              <div class="stat-box-head">
+                <i class="bi bi-arrow-repeat"></i>
+                <p>Current Cycle</p>
+              </div>
+
+              <span id="currentCycleValue">2/5</span>
+            </div>
+
+            <div class="stat-box">
+              <div class="stat-box-head">
+                <i class="bi bi-stopwatch-fill"></i>
+                <p>Elapsed</p>
+              </div>
+
+              <span id="elapsedValue">01:15</span>
+            </div>
+
+            <div class="stat-box">
+              <div class="stat-box-head">
+                <i class="bi bi-hourglass-split"></i>
+                <p>Remaining</p>
+              </div>
+
+              <span id="remainingValue">02:48</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+       PRESETS SECTION
+     ===================================================== -->
+
+      <section class="presets-section">
+        <div class="presets-wrapper">
+          <div class="presets-heading">
+            <i class="bi bi-stars"></i>
+            <div class="presets-content">
+              <h3>Presets</h3>
+              <p>Try a popular breathing pattern.</p>
+            </div>
+          </div>
+
+          <div class="presets-boxes">
+            <button class="preset-box active" type="button" data-preset="relax">
+              <i class="bi bi-feather"></i>
+              Relax
+            </button>
+
+            <button class="preset-box" type="button" data-preset="box">
+              <i class="bi bi-box"></i>
+              Box Breathing
+            </button>
+
+            <button class="preset-box" type="button" data-preset="478">
+              <i class="bi bi-wind"></i>
+              4-7-8
+            </button>
+
+            <button class="preset-box" type="button" data-preset="custom">
+              <i class="bi bi-sliders"></i>
+              Custom
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================
+     FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="footer-left">
+          <i class="bi bi-lightbulb-fill"></i>
+
+          <div class="footer-content">
+            <p>Wellness Tip</p>
+
+            <div class="footer-divider"></div>
+
+            <span>Slow, steady breathing helps calm the nervous system.</span>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <i class="bi bi-feather"></i>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
